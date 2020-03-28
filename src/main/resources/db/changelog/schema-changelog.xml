@@ -1,0 +1,69 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="1" author="Gubanov D.A.">
+        <comment>create tables person</comment>
+        <createTable tableName="person">
+            <column name="id" type="BIGINT" autoIncrement="true"/>
+            <column name="email" type="VARCHAR"/>
+            <column name="password" type="VARCHAR"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2" author="Gubanov D.A.">
+        <comment>create table role</comment>
+        <createTable tableName="role">
+            <column name="id" type="BIGINT" autoIncrement="true"/>
+            <column name="name" type="VARCHAR"/>
+        </createTable>
+    </changeSet>
+    
+    <changeSet id="3" author="Gubanov D.A.">
+        <comment>add person primary key</comment>
+        <addPrimaryKey tableName="person" columnNames="id"/>
+    </changeSet>
+
+    <changeSet id="4" author="Gubanov D.A.">
+        <comment>add role primary key</comment>
+        <addPrimaryKey tableName="role" columnNames="id"/>
+    </changeSet>
+
+    <changeSet id="5" author="Gubanov D.A.">
+        <comment>add person constraints</comment>
+        <addUniqueConstraint tableName="person" columnNames="id"/>
+        <addUniqueConstraint tableName="person" columnNames="email"/>
+        <addNotNullConstraint tableName="person" columnName="id"/>
+        <addNotNullConstraint tableName="person" columnName="email"/>
+        <addNotNullConstraint tableName="person" columnName="password"/>
+    </changeSet>
+
+    <changeSet id="6" author="Gubanov D.A.">
+        <comment>add role constraints</comment>
+        <addUniqueConstraint tableName="role" columnNames="id"/>
+        <addUniqueConstraint tableName="role" columnNames="name"/>
+        <addNotNullConstraint tableName="role" columnName="id"/>
+        <addNotNullConstraint tableName="role" columnName="name"/>
+    </changeSet>
+
+    <changeSet id="7" author="Gubanov D.A.">
+        <comment>create table person_roles</comment>
+        <createTable tableName="person_roles">
+            <column name="person_id" type="BIGINT"/>
+            <column name="role_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="8" author="Gubanov D.A.">
+        <comment>add person_role foreign keys</comment>
+        <addForeignKeyConstraint baseTableName="person_roles" baseColumnNames="person_id" constraintName="fk_person_roles_person"
+                                 referencedTableName="person" referencedColumnNames="id"
+                                 onDelete="CASCADE" onUpdate="RESTRICT"/>
+        <addForeignKeyConstraint baseTableName="person_roles" baseColumnNames="role_id" constraintName="fk_person_roles_role"
+                                 referencedTableName="role" referencedColumnNames="id"
+                                 onDelete="CASCADE" onUpdate="RESTRICT"/>
+    </changeSet>
+
+</databaseChangeLog>
