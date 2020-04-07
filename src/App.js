@@ -6,6 +6,8 @@ import newFolder from './newFolder.png';
 import UseLogin from './login/user';
 import AdminLogin from './login/admin';
 import AdminProfile from './profile/admin';
+import UserProfile from './profile/user';
+import Navigation from "./home/Navigation";
 
 
 function App() {
@@ -23,10 +25,10 @@ function App() {
                 </NavbarBrand>
                 <Nav className="mr-auto" navbar>
                     <NavItem>
-                        <Button color="dark">На главную</Button>
+                        <Button color="dark" onClick={Navigation.toHome}>На главную</Button>
                     </NavItem>
                     <NavItem>
-                        <Button color="dark">Кафедры</Button>
+                        <Button color="dark" onClick={Navigation.allDepartments}>Кафедры</Button>
                     </NavItem>
                     <NavItem>
                         <Button color="dark">Преподаватели</Button>
@@ -37,7 +39,7 @@ function App() {
                 </Nav>
                 <Form inline>
                     <FormGroup className="mr-2">
-                        <Input type="text" placeholder="Найти.." />
+                        <Input type="text" className="w-100" placeholder="Найти.." />
                     </FormGroup>
                     <FormGroup>
                         <Button color="success">Найти</Button>
@@ -55,7 +57,12 @@ function App() {
             {/* <Home /> */}
             {/* <UserLogin /> */}
             {/* <AdminLigin /> */}
-            <AdminProfile />
+            {/*<AdminProfile />*/}
+
+            <div id="allDepartments">
+                <UserProfile />
+            </div>
+
         </div>
     );
 }
