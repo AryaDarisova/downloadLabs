@@ -12,7 +12,6 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-@Builder
 @Entity
 @Table(name = "person")
 public class User extends AbstractEntity implements UserDetails {
@@ -27,6 +26,22 @@ public class User extends AbstractEntity implements UserDetails {
     @PrimaryKeyJoinColumn
     @Column(name = "role_id")
     private Set<Role> roles;
+
+    private String firstName;
+
+    private String secondName;
+
+    private String thirdName;
+
+    private String grade;
+
+    private String faculty;
+
+    private String specialty;
+
+    private String group;
+
+    private String rank;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
