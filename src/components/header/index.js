@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Navbar, NavbarBrand, Nav, NavItem, Form, FormGroup, Input, Button, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap'
-import newFolder from './img/newFolder.png'
-import { NavLink } from 'react-router-dom'
+import newFolder from './img/newFolder.png';
+import { NavLink } from 'react-router-dom';
+import Auth from "../auth/auth";
 
 const Header = () => {
     const [isOpenLogin, setIsOpenLogin] = useState(false);
@@ -43,7 +44,11 @@ const Header = () => {
                     </DropdownToggle>
                         <DropdownMenu>
                             <NavLink to="/login/admin"><DropdownItem>Администратор</DropdownItem></NavLink>
-                            <NavLink to="/login/user"><DropdownItem>Пользователь</DropdownItem></NavLink>
+                            <NavLink to="/login/user">
+                                <DropdownItem onClick={Auth.setLocalStorageUser}>
+                                    Пользователь
+                                </DropdownItem>
+                            </NavLink>
                         </DropdownMenu>
                     </Dropdown>
                 </NavItem>

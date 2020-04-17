@@ -7,6 +7,7 @@ import UserLogin from './components/login/user/index'
 import AdminLogin from './components/login/admin/index'
 import AdminReg from './components/registration/admin'
 import AdminProfile from './components/profile/admin/index'
+import UserProfile from "./components/profile/user";
 // import UserProfile from './components/profile/user'
 
 
@@ -20,6 +21,7 @@ function App() {
                 <Route path="/login/admin" component={AdminLogin} />
                 <Route path="/registration/admin" component={AdminReg} />
                 <Route path="profile/admins" component={AdminProfile} />
+                <Route path="profile/user" component={UserProfile} />
                 {/* <UserProfile /> */}
             </HashRouter>
         </div>
