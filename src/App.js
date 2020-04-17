@@ -1,68 +1,27 @@
-import React, { useState } from 'react'
-import './App.css';
-import Home from './home/index';
-import { Navbar, NavbarBrand, Button, Nav, NavItem, NavLink, Form, FormGroup, Input } from 'reactstrap';
-import newFolder from './newFolder.png';
-import UseLogin from './login/user';
-import AdminLogin from './login/admin';
-import AdminProfile from './profile/admin';
-import UserProfile from './profile/user';
-import Navigation from "./home/Navigation";
+import React from 'react'
+import { HashRouter, Router, Route } from 'react-router-dom'
+import './App.css'
+import Header from './components/header/index'
+import Home from './components/home/index'
+import UserLogin from './components/login/user/index'
+import AdminLogin from './components/login/admin/index'
+import AdminReg from './components/registration/admin'
+import AdminProfile from './components/profile/admin/index'
+// import UserProfile from './components/profile/user'
 
 
 function App() {
-    const [isOpenLogin, setIsOpenLogin] = useState(false);
-    const toggleLogin = () => setIsOpenLogin(!isOpenLogin);
-
-    const [isOpenRegistration, setIsOpenRegistration] = useState(false);
-    const toggleRegistration = () => setIsOpenRegistration(!isOpenRegistration);
-
     return (
         <div className="App">
-            <Navbar color="dark" expand="md">
-                <NavbarBrand href="#">
-                    <img src={newFolder} />
-                </NavbarBrand>
-                <Nav className="mr-auto" navbar>
-                    <NavItem>
-                        <Button color="dark" onClick={Navigation.toHome}>На главную</Button>
-                    </NavItem>
-                    <NavItem>
-                        <Button color="dark" onClick={Navigation.allDepartments}>Кафедры</Button>
-                    </NavItem>
-                    <NavItem>
-                        <Button color="dark">Преподаватели</Button>
-                    </NavItem>
-                    <NavItem>
-                        <Button color="dark">Учебные материалы</Button>
-                    </NavItem>
-                </Nav>
-                <Form inline>
-                    <FormGroup className="mr-2">
-                        <Input type="text" className="w-100" placeholder="Найти.." />
-                    </FormGroup>
-                    <FormGroup>
-                        <Button color="success">Найти</Button>
-                    </FormGroup>
-                </Form>
-                <Nav className="ml-auto" navbar>
-                    <NavItem className="mr-2">
-                        <Button color="dark" onClick={toggleLogin}>Вход</Button>
-                    </NavItem>
-                    <NavItem>
-                        <Button color="dark" onClick={toggleRegistration}>Регистрация</Button>
-                    </NavItem>
-                </Nav>
-            </Navbar>
-            {/* <Home /> */}
-            {/* <UserLogin /> */}
-            {/* <AdminLigin /> */}
-            {/*<AdminProfile />*/}
-
-            <div id="allDepartments">
-                <UserProfile />
-            </div>
-
+            <HashRouter>
+                <Header />
+                <Route exact path="/" component={Home} />
+                <Route path="/login/user" component={UserLogin} />
+                <Route path="/login/admin" component={AdminLogin} />
+                <Route path="/registration/admin" component={AdminReg} />
+                <Route path="profile/admins" component={AdminProfile} />
+                {/* <UserProfile /> */}
+            </HashRouter>
         </div>
     );
 }

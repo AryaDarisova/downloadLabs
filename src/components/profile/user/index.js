@@ -5,7 +5,7 @@ import {Col, Form, FormGroup, Input, InputGroup, ListGroup, ListGroupItem, Input
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import {faGraduationCap} from "@fortawesome/free-solid-svg-icons/faGraduationCap";
-import Navigation from "../home/Navigation";
+import Navigation from "../../home/Navigation";
 
 const UserProfile = (props) => {
     const [modalSsOpen, setModalIsOpen] = useState(false);

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ReactDOM from "react-dom";
-import App from "../App";
+// import App from "../App";
 import {
     Card, Nav, NavItem, NavLink, UncontrolledCollapse, Button,
     CardBody,

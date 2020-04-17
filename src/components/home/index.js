@@ -1,10 +1,10 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col, Card, CardBody, CardImg, CardTitle, CardHeader, CardText, CardGroup, Button } from "reactstrap";
+import { Container, Row, Col, Card, CardBody, CardHeader, CardText, Button } from "reactstrap";
 
 const Home = () => {
     return (
-             <Container className="mt-5">
+        <Container className="mt-5 text-center">
             <h1 className="text-align-center">Новая папка</h1>
             <h3>Просто способ получить доступ к лабам и методичкам онлайн!</h3>
             <Button className="mt-5 mb-5" color="primary" size="lg">Начни прямо сейчас!</Button>
@@ -16,9 +16,8 @@ const Home = () => {
                         </CardHeader>
                         <CardBody>
                             <CardText>
-                                <p>Каждый год 64532452342 студентов отчисляют из учебных заведений потому что они не могут найти лабораторные и методички.<br />
-                                    Не стань одним из них. Найди всю необходимую информацию уже сейчас.
-                                    </p>
+                                Каждый год 64532452342 студентов отчисляют из учебных заведений потому что они не могут найти лабораторные и методички.<br />
+                                Не стань одним из них. Найди всю необходимую информацию уже сейчас.
                             </CardText>
                         </CardBody>
                     </Card>
@@ -42,9 +41,8 @@ const Home = () => {
                         </CardHeader>
                         <CardBody>
                             <CardText>
-                                <p>Чтобы воспользоваться нашим сервисом, необходимо уметь включать компуктер и выходить в интернет. Если ты не умеешь это делать, то пусть наши приложение
+                                Чтобы воспользоваться нашим сервисом, необходимо уметь включать компуктер и выходить в интернет. Если ты не умеешь это делать, то пусть наши приложение
                                 поможет тебе получить мотивацию для саморазвития!
-                                </p>
                             </CardText>
                         </CardBody>
                     </Card>

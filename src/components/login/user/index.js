@@ -2,7 +2,7 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Form, FormGroup, Input, Label, Card, CardHeader, CardBody, Row, CardFooter, Button, Container } from "reactstrap";
 
-const UseLogin = () => {
+const UserLogin = () => {
     return (
         <Container>
             <Row className="mt-5 justify-content-center">
@@ -36,4 +36,4 @@ const UseLogin = () => {
     );
 }
 
-export default UseLogin;
+export default UserLogin;
