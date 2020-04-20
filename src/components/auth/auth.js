@@ -6,7 +6,7 @@ export default class Auth {
     static loginUser() {
         if (localStorage.getItem(document.getElementById("loginUserLogin").innerText) ==
             document.getElementById("loginUserPassword").innerText) {
-            history.push("profile/user");
+            // history.push("profile/user");
         }
         else {
             alert("Неправильно введенный логин или пароль!");
